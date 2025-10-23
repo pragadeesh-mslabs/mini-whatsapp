@@ -6,10 +6,9 @@ const app = express();
 app.set('trust proxy', 1);  // For HTTPS
 const server = http.createServer(app);
 const io = new Server(server, {
-    cors: { origin: "*" },
-    allowEIO3: true  // For compatibility
+  cors: { origin: "*" },
+  transports: ['websocket', 'polling']  // Fallback for proxies
 });
-
 app.use(express.static('public'));
 
 let users = {};
