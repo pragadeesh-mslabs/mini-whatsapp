@@ -1,9 +1,9 @@
 const socket = io();
 let username = '';
 
-// Join chat
+// Join  chat
 function joinChat() {
-    username = document.getElementById('username').value.trim();
+    username =  document.getElementById('username').value.trim();
     if (username) {
         document.getElementById('login-screen').style.display = 'none';
         document.getElementById('chat-screen').style.display = 'block';
